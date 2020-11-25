@@ -5,7 +5,7 @@ import Test from './test.routes';
 import AppRoutes from './app.routes';
 
 import {useAuth} from '../hooks/Auth';
-import TabRoutes from './Tab.routes';
+import Nav from './nav.routes';
 
 const Routes: React.FC = () => {
   const {user, loading} = useAuth();
@@ -18,7 +18,7 @@ const Routes: React.FC = () => {
     );
   }
 
-  return user ? <TabRoutes /> : <AppRoutes />;
+  return user ? <Nav /> : <AppRoutes />;
 };
 
 export default Routes;

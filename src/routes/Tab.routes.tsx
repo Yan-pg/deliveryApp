@@ -9,6 +9,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import Favorites from '../pages/Favorites';
 import User from '../pages/user';
 import Recets from '../pages/Recents';
+import Orders from '../pages/Orders';
 
 const Tab = createBottomTabNavigator();
 

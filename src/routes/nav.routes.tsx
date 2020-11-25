@@ -2,11 +2,13 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 
-import Home from '../pages/seila';
+import TabRoutes from './Tab.routes';
+import Orders from '../pages/Orders';
+import Home from '../pages/Home';
 
 const App = createStackNavigator();
 
-const Test: React.FC = () => (
+const Nav: React.FC = () => (
   <NavigationContainer>
     <App.Navigator initialRouteName="Home">
       <App.Screen
@@ -16,8 +18,15 @@ const Test: React.FC = () => (
         name="Home"
         component={Home}
       />
+      <App.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="Orders"
+        component={Orders}
+      />
     </App.Navigator>
   </NavigationContainer>
 );
 
-export default Test;
+export default Nav;

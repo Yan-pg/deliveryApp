@@ -44,8 +44,8 @@ export const AuthProvider: React.FC = ({children}) => {
   useEffect(() => {
     async function loadStoragedData() {
       const [token, user] = await AsyncStorage.multiGet([
-        '@Deliveryapp:token',
-        '@Deliveryapp:user',
+        '@Deliveryapp2:token',
+        '@Deliveryapp2:user',
       ]);
 
       if (token[1] && user[1]) {
@@ -68,8 +68,8 @@ export const AuthProvider: React.FC = ({children}) => {
     const {token, user} = response.data;
 
     await AsyncStorage.multiSet([
-      ['@Deliveryapp:token', token],
-      ['@Deliveryapp:user', JSON.stringify(user)],
+      ['@Deliveryapp2:token', token],
+      ['@Deliveryapp2:user', JSON.stringify(user)],
     ]);
 
     api.defaults.headers.authorization = `Bearer ${token}`;
@@ -78,14 +78,17 @@ export const AuthProvider: React.FC = ({children}) => {
   }, []);
 
   const signOut = useCallback(async () => {
-    await AsyncStorage.multiRemove(['@Deliveryapp:user', '@Deliveryapp:token']);
+    await AsyncStorage.multiRemove([
+      '@Deliveryapp2:user',
+      '@Deliveryapp2:token',
+    ]);
 
     setData({} as AuthState);
   }, []);
 
   const updateUser = useCallback(
     async (user: User) => {
-      await AsyncStorage.setItem('@Deliveryapp:user', JSON.stringify(user));
+      await AsyncStorage.setItem('@Deliveryapp2:user', JSON.stringify(user));
 
       setData({
         token: data.token,

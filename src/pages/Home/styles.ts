@@ -1,5 +1,6 @@
-import {RectButton} from 'react-native-gesture-handler';
+import {FlatList, RectButton} from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
+import {ProductsByCategory} from './index';
 
 export const Container = styled.View`
   background: #f2f2f2;
@@ -91,6 +92,70 @@ export const DescriptionFood = styled.Text`
 export const PriceFood = styled.Text`
   text-align: center;
   margin-top: 40px;
+  color: #fa4a0c;
+  font-weight: bold;
+`;
+
+export const ToggleModal = styled.Modal``;
+
+export const ButtonBackHomeModal = styled.TouchableOpacity`
+  margin-top: 40px;
+  margin-left: 30px;
+`;
+
+export const TitleCategory = styled.Text`
+  align-self: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fa4a0c;
+`;
+
+export const CatainerProduct = styled.View`
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+`;
+
+export const Products = styled.View``;
+
+export const ProductCard = styled.TouchableOpacity`
+  width: 160px;
+  height: 220px;
+  background: #e9e8e8;
+  margin-left: 20px;
+  margin-top: 100px;
+  margin-right: 8px;
+
+  border-radius: 20px;
+`;
+
+export const ImageProduct = styled.Image`
+  align-self: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 80px;
+  position: absolute;
+  bottom: 150px;
+`;
+
+export const NameProduct = styled.Text`
+  text-align: center;
+  margin-top: 90px;
+  font-weight: bold;
+  font-size: 18px;
+`;
+
+export const DescriptionProduct = styled.Text`
+  color: #adadaf;
+  font-size: 10px;
+  margin-top: 40px;
+  width: 80%;
+  margin: 0 auto;
+`;
+
+export const PriceProduct = styled.Text`
+  text-align: center;
+  margin-top: 20px;
   color: #fa4a0c;
   font-weight: bold;
 `;
