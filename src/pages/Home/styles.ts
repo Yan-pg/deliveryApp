@@ -1,6 +1,5 @@
-import {FlatList, RectButton} from 'react-native-gesture-handler';
+import {RectButton} from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
-import {ProductsByCategory} from './index';
 
 export const Container = styled.View`
   background: #f2f2f2;

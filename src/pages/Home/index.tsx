@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useCallback, useEffect, useState} from 'react';
-import {Alert, StatusBar} from 'react-native';
+import {StatusBar} from 'react-native';
 import {FlatList, ScrollView} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Feather';
 import {useAuth} from '../../hooks/Auth';
@@ -159,7 +159,15 @@ const Home: React.FC = () => {
           data={product}
           keyExtractor={(products) => products.id}
           renderItem={({item: products}) => (
-            <ContainerMain onPress={() => goToOrder()}>
+            <ContainerMain
+              onPress={() =>
+                goToOrder(
+                  products.productImage_url,
+                  products.name,
+                  products.description,
+                  products.price,
+                )
+              }>
               <ImageFood
                 source={{
                   uri: products.productImage_url,
